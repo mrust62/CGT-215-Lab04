@@ -55,7 +55,52 @@ void factorial() {
     }
 }
 void arithmetic() {
-    // I recommend writing your arithmetic series code here
+    int startNumb;
+    int difference;
+    int numbElements;
+    int newNumb;
+    int total = 0;
+    // get the values for the math
+    cout << "enter a number to start at: ";
+    cin >> startNumb;
+    cout << "enter a number to add each time: ";
+    cin >> difference;
+    cout << "enter the number of time you want it to be added: ";
+    cin >> numbElements;
+
+    //to check if it is possible to do
+    if (numbElements < 1)
+    {
+        // repeates until it is possible
+        while (numbElements < 1)
+        {
+            cout << "a number can only be added a positive amount of times, please enter a POSITIVE number";
+            cin >> numbElements;
+        }
+    }
+    
+    // does the math
+    for (int count(0); numbElements > count; count++)
+    {
+        // if statements are to ensure that the equation displays appropriatly
+        if (count == 0)
+        {
+            total = startNumb;
+            cout << startNumb << " + ";
+            newNumb = startNumb + difference;
+        }
+        else if (count == (numbElements - 1))
+        {
+            total = total + newNumb;
+            cout << newNumb << " = " << total << endl;
+        }
+        else
+        {
+            total = total + newNumb;
+            cout << newNumb << " + ";
+            newNumb = newNumb + difference;
+        }
+    }
 }
 void geometric() {
     // I recommend writing your geometric series code here
